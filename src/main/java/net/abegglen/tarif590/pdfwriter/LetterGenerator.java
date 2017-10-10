@@ -16,8 +16,9 @@ import static net.abegglen.tarif590.pdfwriter.PdfCommon.getSimpleCell;
 
 public class LetterGenerator {
 
-    public static PdfWriter pdfWriter;
-    public static BaseFont baseFontReg;
+    private static PdfWriter pdfWriter;
+    private static BaseFont baseFontReg;
+    private static String fontPath = "c:\\tmp\\";
 
     public static byte[] generate(GeneralLetterData letterData) throws DocumentException, IOException {
         //TODO Change throws to LetterGeneratorException
@@ -27,9 +28,9 @@ public class LetterGenerator {
         pdfWriter = PdfWriter.getInstance(document, outputStream);
         document.open();
 
-        //TODO we must use some property of class or additional parameter in method
-        baseFontReg = BaseFont.createFont("C:\\tmp\\Lato-Regular.ttf", "CP1251", true);
-        BaseFont baseFontBold = BaseFont.createFont("C:\\tmp\\Lato-Bold.ttf", "CP1251", true);
+        //TODO need to know which encoding must be
+        baseFontReg = BaseFont.createFont(fontPath + "Lato-Regular.ttf", "CP1251", true);
+        BaseFont baseFontBold = BaseFont.createFont(fontPath + "Lato-Bold.ttf", "CP1251", true);
 
         Font fontRegular = new Font(baseFontReg, 12, Font.NORMAL);
         Font fontBold = new Font(baseFontBold, 12, Font.NORMAL);
