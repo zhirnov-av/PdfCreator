@@ -13,6 +13,10 @@ public class LetterBlock {
     public LetterBlock(String lines) {
         String[] linesArray = lines.split("\n");
         this.lines = new ArrayList<>(Arrays.asList(linesArray));
+        for (int i = 0; i< this.lines.size(); i++)
+            if (this.lines.get(i).equals("-"))
+                this.lines.set(i, " ");
+
     }
 
     public LetterBlock(ArrayList<String> lines) {

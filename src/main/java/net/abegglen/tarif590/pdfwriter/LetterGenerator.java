@@ -35,6 +35,19 @@ public class LetterGenerator {
         Font fontRegular = new Font(baseFontReg, 12, Font.NORMAL);
         Font fontBold = new Font(baseFontBold, 12, Font.NORMAL);
 
+
+        BORDER_TYPE = 0;
+
+        PdfContentByte cb = pdfWriter.getDirectContent();
+
+        PdfPTable table = new PdfPTable(1);
+        table.setTotalWidth(mmToPoints(70));
+        for (int i = 0; i < letterData.getSender().size(); i++){
+            table.addCell(getSimpleCell(fontRegular, letterData.getSender().getLineByIndex(i), Element.ALIGN_RIGHT));
+        }
+        table.writeSelectedRows(0,table.getRows().size(), (float)mmToPoints(10), (float)mmToPoints(280), cb);
+
+        /*
         Paragraph paragraph = new Paragraph(14.0f, "test embedded font\ntest embedded font\ntest embedded font", fontRegular);
         paragraph.add(new Chunk("test embedded font\ntest embedded font\ntest embedded font", fontRegular));
         paragraph.add(new Chunk("test embedded font\ntest embedded font\ntest embedded font", fontRegular));
@@ -42,14 +55,14 @@ public class LetterGenerator {
 
         paragraph = new Paragraph(14.0f, "test embedded bold font\ntest embedded bold font\ntest embedded bold font", fontBold);
         document.add(paragraph);
+        */
 
         //add recipient block at absolute position (text must be from bottom to top)
-        PdfPTable table = new PdfPTable(1);
+        table = new PdfPTable(1);
         for (int i = letterData.getRecipient().size() - 1; i >= 0 ; i--){
             table.addCell(getSimpleCell(fontRegular, letterData.getRecipient().getLineByIndex(i), Element.ALIGN_LEFT));
         }
         table.setTotalWidth(mmToPoints(73));
-        PdfContentByte cb = pdfWriter.getDirectContent();
         table.writeSelectedRows(0,table.getRows().size(), (float)mmToPoints(118), (float)mmToPoints(238), cb);
         //done
 
