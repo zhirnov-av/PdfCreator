@@ -13,7 +13,7 @@ public class LetterBlock {
 
     public LetterBlock(String lines) {
         //  replacing two line breaks with any char between line breaks
-        //  need to excluding lose empty lines...
+        //  need to excluding losing empty lines...
         lines = lines.replace("\n\n", "\n_\n");
 
         String[] linesArray = lines.split("\n");
@@ -65,6 +65,14 @@ public class LetterBlock {
     //  This method need for building table in pdf line by line (to get lines count)
     public int size(){
         return lines.size();
+    }
+
+    public String[] getLinesArray(){
+        String[] array = new String[lines.size()];
+        for (int i = 0; i<lines.size(); i++){
+            array[i] = lines.get(i);
+        }
+        return array;
     }
 
     public static void main(String[] args) {

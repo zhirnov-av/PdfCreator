@@ -1,9 +1,5 @@
 package net.abegglen.tarif590.pdfwriter;
 
-import net.abegglen.tarif590.pdfwriter.GeneralLetterData;
-import net.abegglen.tarif590.pdfwriter.LetterBlock;
-import net.abegglen.tarif590.pdfwriter.LetterGenerator;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -19,7 +15,8 @@ public class Main {
                     "\n\tNext long text next long text next long text verylongwordverylongwordverylongwordverylongwordverylongwordverylongwordverylongword");
             generalLetterData.setSalutation("Freundliche Grusse\n\n\nJosef Minder\nVerkhaufs- und Marketingleiter\n\n\nBeilagen\n> Anfahrtsplan");
             generalLetterData.setSenderPlus(new LetterBlock("Telefon +41 (0)71 667 30 90\nDirekt +41 (0)71 667 30 77"));
-            LetterGenerator.generate(generalLetterData, "c:\\test\\test.pdf");
+            generalLetterData.setImagePath("c:\\tmp\\intellij-logo.png");
+            DeckblattGenerator.LetterGenerator.generate(generalLetterData, "c:\\tmp\\test.pdf");
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
         }
