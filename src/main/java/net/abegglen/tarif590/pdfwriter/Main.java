@@ -15,8 +15,8 @@ public class Main {
                     "\n\tNext long text next long text next long text verylongwordverylongwordverylongwordverylongwordverylongwordverylongwordverylongword");
             generalLetterData.setSalutation("Freundliche Grusse\n\n\nJosef Minder\nVerkhaufs- und Marketingleiter\n\n\nBeilagen\n> Anfahrtsplan");
             generalLetterData.setSenderPlus(new LetterBlock("Telefon +41 (0)71 667 30 90\nDirekt +41 (0)71 667 30 77"));
-            generalLetterData.setImagePath("c:\\tmp\\intellij-logo.png");
-            DeckblattGenerator.LetterGenerator.generate(generalLetterData, "c:\\tmp\\test.pdf");
+            generalLetterData.setImagePath("c:\\temp\\intellij-logo.jpg");
+            DeckblattGenerator.LetterGenerator.generate(generalLetterData, "c:\\test\\test.pdf");
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
         }

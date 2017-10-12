@@ -67,14 +67,6 @@ public class LetterBlock {
         return lines.size();
     }
 
-    public String[] getLinesArray(){
-        String[] array = new String[lines.size()];
-        for (int i = 0; i<lines.size(); i++){
-            array[i] = lines.get(i);
-        }
-        return array;
-    }
-
     public static void main(String[] args) {
         LetterBlock letterBlock = new LetterBlock("1","2","3");
         System.out.println(letterBlock.getLinesFromBottom(4));

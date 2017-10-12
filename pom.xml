@@ -30,25 +30,6 @@
             <version>7.0.4</version>
         </dependency>
 
-        <!-- only needed for forms -->
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>forms</artifactId>
-            <version>7.0.4</version>
-        </dependency>
-
-        <!-- only needed for PDF/A -->
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>pdfa</artifactId>
-            <version>7.0.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>RELEASE</version>
-        </dependency>
 
     </dependencies>
 
